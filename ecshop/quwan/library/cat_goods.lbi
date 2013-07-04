@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $cat_rec_sign neq 1} zhangyh_100322 -->
+<div class="cat_goods"> <!--商品分类区域：头部标题-->
+    <div class="head">
+        <ul>
+            <li class="name_img"><a href="{$goods_cat.url}"><img src="../images/cat/cat-{$goods_cat.id}.gif"></a></li>
+            <li class="cat_more"> <!--{foreach from=$goods_cat.children item=child}--> <a
+                href="category.php?id={$child.cat_id}" target="_blank">{$child.cat_name}</a>　|　 <!--{/foreach}--> </li>
+            <li class="more" style="margin-right: 10px;line-height: 33px"><a href="{$goods_cat.url}">更多</a>
+            </li>
+        </ul>
+    </div>
+    <!--商品分类区域：商品列表-->
+    <div class="cat_goods_box">
+        <div class="clearfix goodsBox" style="border:none;"> <!--左侧大广告图--> <!-- {/if}-->
+            <div class="f_l">
+                <div style="float:left"> <?php echo get_adv('cat_l',$GLOBALS['smarty']->_var['goods_cat']['id'])?></div>
+            </div>
+            <!--中间商品列表-->
+            <div class="f_r"> <!--{foreach from=$cat_goods item=goods}-->
+                <div class="goodsItem">
+                    <dl> <!--商品图片-->
+                        <dd class="image"><a href="{$goods.url}"><img src="{$goods.thumb}"
+                                                                      alt="{$goods.name|escape:html}"/></a></dd>
+                        <!--商品名称-->
+                        <dd class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a>
+                        </dd>
+                        <!--商品价格-->
+                        <dd class="price f1"><font style="font-weight:bold"> <!--{if $goods.promote_price neq "" } -->
+                            {$goods.promote_price} <!--{else}--> {$goods.shop_price} <!--{/if}--> </font> <!--商品积分-->
+                            <!--增加赠送积分显示--> <font style="color:#999">(赠{$goods.give_integral}积分)</font></dd>
+                    </dl>
+                </div>
+                <!--{/foreach}--> </div>
+            <div class="f_A_d"> <?php echo get_adv_r('cat_r',$GLOBALS['smarty']->_var['goods_cat']['id'])?></div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<div class="blank"></div>

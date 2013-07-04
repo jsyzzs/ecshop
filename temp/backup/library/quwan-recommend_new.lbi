@@ -1,0 +1,58 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/prototype.js" type=text/javascript></SCRIPT>
+<style type="text/css">
+<!--
+.flashbox { width:685px; text-align:center; background:url(../images/g_box_bj.jpg) no-repeat; height:33px;}
+.flashbox LI {OVERFLOW: hidden; width:10px; height:10px; float:left; margin-right:5px;}
+.flashbox LI A {DISPLAY: block; width:10px; height:10px; float:left;  background: #eaeaea; }
+.flashbox LI.selected A { background:#9f9f9f}
+.flashbox LI A:hover { background:#9f9f9f}
+.flashbox .tit{ height:23px; padding-top:10px; padding-left:40px;}
+.flashbox .tit img{ float:left}
+.flashbox .tit  #SwitchNav{ float:left; }
+.flashbox .tit  .f_r{ padding-right:20px;}
+.flashbox .goodsItem{border:#F2F2F2 1px solid;height:215px; width:152px; margin-left:13px!important ;margin-left:9px; margin-top:15px; padding:0;}
+.flashbox .goodsItem dl{ float:left; display:block}
+-->
+</style>
+<script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/changimages.js" type=text/javascript></SCRIPT>
+<DIV class="flashbox" align="center">
+
+<div class="tit">
+<img src="../images/xinp.jpg">
+
+<div class="f_r">
+<a href="#" class="more" >更多</a>
+</DIV>
+</DIV>
+
+<div style=" clear:both"></div>
+
+<DIV id="SwitchBigPic" style="border:1px #dddddd solid; float:left; border-top:none; width:683px; padding-bottom:15px;">
+<DIV style="text-align:center; margin:0; padding:0">
+        <!--{foreach from=$new_goods item=goods name=no1}-->
+        
+        <!-- {if $smarty.foreach.no1.iteration<9}-->
+            <dl class="goodsItem">
+                <dd><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a></dd>
+                <dd style="height:37px"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></dd>
+              <dd class="f1">
+                <div style="font-weight:bold">
+                 <!-- {if $goods.promote_price neq ""} -->
+              {$goods.promote_price}
+              <!-- {else}-->
+              {$goods.shop_price}
+              <!--{/if}-->
+              </div>
+              <!--<div style="float:right;color:#B0B0B0">赠 <font style="color:#AB1B32">80</font>积分</div>-->
+            </dd>
+               </dl>
+          <!--{/if}-->
+        <!--{/foreach}-->
+
+</DIV>
+<!-- 删除原分屏第2、3屏内容，Mr.HZ -->
+</DIV>
+</DIV>
+<!--{/if}-->

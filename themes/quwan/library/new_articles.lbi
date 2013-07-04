@@ -1,0 +1,75 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="cat_articles new_article">
+    <div style=" display: block; float:left; height:33px;line-height:0;font-size:0;">
+        <ul class="news_nav" id="normaltab">
+			<li id="newcut" class="current"><a>促销信息</a></li>
+			<li><a>商城公告</a></li>
+			<li><a>媒体聚焦</a></li>
+		<ul>
+    </div>
+    <div class="boxCenterList newsBox tabcon "  id="normalcon">
+     		<div class="news_b sublist">
+	           <!--{foreach from=$class_articles_10 item=article}-->
+	           		  <span style="width:209px;" title="{$article.title|escape:html}">  <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:15:true}</a></span>
+	           <!--{/foreach}-->
+	          
+	        </div>
+	        <div class="news_b sublist">
+	            <!--{foreach from=$new_articles item=article name=no}-->
+	            <span style="width:209px;" title="{$article.title|escape:html}">  <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></span>
+	            <!--{/foreach}-->
+	        </div>
+	       
+	        <div class="news_b sublist">
+	            <!--{foreach from=$class_articles_11 item=article}-->
+	            <span style="width:209px;" title="{$article.title|escape:html}">  <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></span>
+	            <!--{/foreach}-->
+	            
+	        </div>
+
+    </div>
+</div>
+
+<a href="/goods-2802.html" target="_blank"><img src="../images/chanpintu_01.jpg" style="height: 104px;width:200px"></a>
+
+<a href="/goods-2802.html" target="_blank"><img src="../images/chanpintu_02.jpg" style="height: 104px;width:200px"></a>
+
+<a href="/goods-2802.html" target="_blank"><img src="../images/chanpintu_03.jpg" style="height: 97px;width:200px"></a>
+
+<script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.tabso_yeso.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function($){
+	
+	//上下滑动选项卡切换
+	$("#move-animate-top").tabso({
+		cntSelect:"#topcon",
+		tabEvent:"mouseover",
+		tabStyle:"move-animate",
+		direction : "top"
+	});
+	
+	//左右滑动选项卡切换
+	$("#move-animate-left").tabso({
+		cntSelect:"#leftcon",
+		tabEvent:"mouseover",
+		tabStyle:"move-animate",
+		direction : "left"
+	});
+	
+	//淡隐淡现选项卡切换
+	$("#fadetab").tabso({
+		cntSelect:"#fadecon",
+		tabEvent:"mouseover",
+		tabStyle:"fade"
+	});
+	
+	//默认选项卡切换
+	$("#normaltab").tabso({
+		cntSelect:"#normalcon",
+		tabEvent:"mouseover",
+		tabStyle:"normal"
+	});
+	
+});
+</script>

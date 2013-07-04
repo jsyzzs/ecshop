@@ -1,0 +1,85 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<!-- Mr.HZ 2011-11-29 屏蔽无关JS脚本.
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/prototype.js" type=text/javascript></SCRIPT>
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/changimages.js" type=text/javascript></SCRIPT>
+-->
+<DIV class="recommendbox" align="center">
+    <div class="tit">
+    	<ul id="fadetab">
+	    	<li class="current"><a>猜你喜欢</a></li>
+	    	<li><a>团购</a></li>
+	    	<li><a>品牌特卖</a></li>
+    	</ul>
+    </DIV>
+    <DIV class="SwitchBigPic" id="fadecon">
+    	<div class="sublist">
+	        <!--{foreach from=$new_goods item=goods name=no1}-->
+	
+	        <!-- {if $smarty.foreach.no1.iteration<9}-->
+	        <dl class="recommend_goodsItem">
+	            <dd class="recommend_goodsItem_image"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a>
+	            </dd>
+	            <dd class="recommend_goodsItem_name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></dd>
+	            <dd class="recommend_goodsItem_price">
+	             	<font class="recommend_goodsItem_integral"></font>
+	                <font style="font-weight:bold">
+	                    <!-- {if $goods.promote_price neq ""} -->
+	                    {$goods.promote_price}
+	                    <!-- {else}-->
+	                    {$goods.shop_price}
+	                    <!--{/if}-->
+	                </font>
+	                <font class="recommend_goodsItem_integral">(销量:{$goods.give_integral})</font>
+	            </dd>
+	        </dl>
+	        <!--{/if}-->
+	        <!--{/foreach}-->
+    	</div>
+    	<div class="sublist">
+	      <!--{foreach from=$hot_goods item=goods name=no1}-->
+		      <!-- {if $smarty.foreach.no1.iteration<9}-->
+		      <dl class="recommend_goodsItem">
+		        <dd class="recommend_goodsItem_image"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></dd>
+		        <dd class="recommend_goodsItem_name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></dd>
+		        <dd class="recommend_goodsItem_price">
+		          <font class="recommend_goodsItem_integral"></font>
+		          <font style="font-weight:bold">
+		            <!-- {if $goods.promote_price neq ""} -->
+		            {$goods.promote_price}
+		            <!-- {else}-->
+		            {$goods.shop_price}
+		            <!--{/if}-->
+		          </font> 
+		          
+		        </dd>
+		      </dl>
+		      <!--{/if}-->
+		  <!--{/foreach}-->
+    	</div>
+    	<div class="sublist">
+	        <!--{foreach from=$new_goods item=goods name=no1}-->
+	
+	        <!-- {if $smarty.foreach.no1.iteration<9}-->
+	        <dl class="recommend_goodsItem">
+	            <dd class="recommend_goodsItem_image"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a>
+	            </dd>
+	            <dd class="recommend_goodsItem_name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></dd>
+	            <dd class="recommend_goodsItem_price">
+	                <font style="font-weight:bold">
+	                    <!-- {if $goods.promote_price neq ""} -->
+	                    {$goods.promote_price}
+	                    <!-- {else}-->
+	                    {$goods.shop_price}
+	                    <!--{/if}-->
+	                </font>
+	                <font class="recommend_goodsItem_integral">(销量:{$goods.give_integral})</font>
+	            </dd>
+	        </dl>
+	        <!--{/if}-->
+	        <!--{/foreach}-->
+    	</div>
+    </DIV>
+    <div style="clear:both"></div>
+</DIV>
+<!--{/if}--> 

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<link href="../../choujiang.css" rel="stylesheet" type="text/css" />
+    {* 包含脚本文件 *}
+    {insert_scripts files='common.js,index.js'}
+
+    <script type="text/javascript">
+        function $id(element) {
+            return document.getElementById(element);
+        }
+        //切屏--是按钮，_v是内容平台，_h是内容库
+        function reg(str){
+            var bt=$id(str+"_b").getElementsByTagName("h2");
+            for(var i=0;i<bt.length;i++){
+                bt[i].subj=str;
+                bt[i].pai=i;
+                bt[i].style.cursor="pointer";
+                bt[i].onmousemove=function(){
+                    $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+                    for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+                        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+                        var ison=j==this.pai;
+                        _bt.className=(ison?"":"h2bg");
+                    }
+                }
+            }
+            $id(str+"_h").className="none";
+            $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+        }
+    </script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div id="choujiang_box">
+	<div id="phytop_content">
+        <!--第一块区域开始-->
+        <div class="choujiang_content_space" style="*height: 1%">
+           <div style="float:left;width:500px"><img src="images/images/choujiang_01.gif" /></div>
+           <div style="float:left;width:460px;height:440px;background:url(images/images/choujiang_02.gif) no-repeat;">
+           		<!--会员积分数据-->
+           		<div style="position:relative;top:180px;width:400px;left:30px">ssdsd</div>
+                <!--活动介绍--->
+                <div style="position:relative;top:250px;left:100px;width:340px">
+                	活动时间：<br />
+2月1日 -- 3月1日
+                </div>
+           </div>
+            <div style="clear:both"></div>
+        </div>
+        <!--第一块区域结束-->
+        <!--第二块区域（奖品展示区）开始-->
+        <div style="background:url(images/images/choujiang_03.gif);width:960px;height:360px">
+        </div>
+        <!--第二块区域结束-->
+        <!--第三块区域（奖品展示区）开始-->
+        <div>
+        	<img src="images/images/choujiang_04.gif" />
+            <span style="padding:0 30px">说明</span>
+        </div>
+        <!--第三块区域结束-->
+    </div>
+    <span style="height:10px"></span>
+    <div style="border:#CA142A 3px solid;width:600px;background-color:#FFFEDF;">
+    <div style="height:210px; margin:30px; background:url(images/choujiang_05.gif) no-repeat;color:#000">
+    	<dl style="margin-left:120px">
+    	<dt style="font-size:24px;line-height:150%;font-weight:bold">很遗憾，您没抽中积分大奖。</dt>
+        <dd style="margin-top:30px">sd</dd>
+        </dl>
+    </div>
+        <div style="background-color:#8C0101;text-align:center;padding:5px 0"><img src="images/choujiang_06.gif" /></div>
+    </div>
+</div>
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/links.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="block clearfix">  
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+  <!--left start-->
+  <div class="AreaL">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox">
+        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--left end-->
+  <!--right start-->
+
+  <div class="AreaR">
+  <!--====新界面开始===================================-->
+  <div style="border:1px solid #FFE1A5;background-color:#F9F3E7;padding:10px 20px" class="clearfix">
+      <b style="font-size:18px;margin-right: 50px">欢迎您回来，尊敬的<span style="color:#B70207">{$info.username}</span>会员</b>{$rank_name} {$next_rank_name}
+      <a href="user.php?act=logout" style="width:120px;margin-left: 50px"><img src="images/out.gif" border="0" align="absmiddle"></a>
+      <div class="blank"></div>
+      {$lang.last_time}：<font style="color:#0160B2">{$info.last_time}</font><br />
+      <div class="blank5"></div>
+      <hr style="height:1px;border:none;border-top:1px solid #EDD08E;" />
+      {$item.text}{$lang.last_month_order}{$info.order_count}{$lang.order_unit}
+      <div class="blank5"></div>
+      <div style="background-color:#FFF;border:1px solid #EDD08E;padding:10px;color:#A5A5A5">
+          <span style="width:340px;float: left;vertical-align: middle;height:30px;line-height: 30px">{$lang.your_integral}：<font style="color:#B70207;font-size:16px">{$info.integral} </font>  <a href="#" style="color:#0063B4"><img src="images/icon_3.gif"> 什么是积分？</a></span>
+          <span style="width:340px;float: left;height:30px;line-height: 30px">金币：<font style="color:#B70207;font-size:16px">{$info.integral} </font>  <a href="#" style="color:#0063B4"><img src="images/icon_3.gif"> 什么是金币？</a></span>
+          <hr style="height:1px;border:none;border-top:1px solid #EDD08E;" />
+          <ul>
+              <li style="padding-top:10px ">
+                  <b style="color:#B70207;font-size:18px">积分可参与的活动</b>（可参与单个活动也可以多个活动综合参与）
+              </li>
+              <li>
+                  <img src="images/line_1.gif">
+              </li>
+              <li style="background:url(images/list_1.gif) no-repeat top left;height:90px">
+                  <div style="padding-left: 50px;padding-top: 5px;float: left"><b style="font-size:16px;color:#B70207">兑换金币</b> ---- 积分兑换金币比例为&nbsp;&nbsp;<font style="color:#0063B4">1:1</font>&nbsp;&nbsp;，您现在的积分为&nbsp;&nbsp;<font style="color:#B70207">{$info.integral}</font>&nbsp;&nbsp;可以兑换&nbsp;&nbsp;<font style="color:#B70207">{$info.integral}</font>&nbsp;&nbsp;金币</div>
+                  <div style="padding-left: 50px;padding-top: 15px;float:left">
+                  <form  name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()" style="background-color: #EFEDEE;border: 1px solid #CCCCCC;padding: 3px 5px;float:left;">
+                  <input type="text" name="amount" value="{$order.amount|escape}"  style="border:none;background-color: #FFF;width:300px;padding-left: 5px;line-height:20px;height:20px;font-size: 16px;vertical-align:middle">
+                
+                  <input type="hidden" name="surplus_type" value="1" />
+              	 <input type="hidden" name="act" value="act_account" />
+                 <input type="image" src="images/duihuang.gif" name="submit" style="vertical-align:middle;" />
+                  </form>
+                    <a href="#" style="color:#0063B4"><img src="images/icon_3.gif"> 什么是金币？</a></div>
+              </li>
+              <li>
+                  <img src="images/line_1.gif">
+              </li>
+              <li style="background:url(images/list_2.gif) no-repeat top left;height:90px">
+                  <div style="padding-left: 50px;padding-top: 5px;float: left"><b style="font-size:16px;color:#B70207">参与抽奖</b> ---- 积分兑换金币比例为&nbsp;&nbsp;<font style="color:#0063B4">1:3</font>&nbsp;&nbsp;，您现在的积分为&nbsp;&nbsp;<font style="color:#B70207">{$info.integral}</font>&nbsp;&nbsp;可以兑换&nbsp;&nbsp;<font style="color:#B70207">?</font>&nbsp;&nbsp;金币</div>
+                  <div style="padding-left: 50px;padding-top: 15px;float:left"><form style="background-color: #EFEDEE;border: 1px solid #CCCCCC;padding: 3px 5px;float:left;"><input type="text" id="" name="" readonly="true" style="border:none;background-color: #FFF;width:300px;padding-left: 5px;line-height:20px;height:20px;font-size: 16px;vertical-align:middle"><input type="image" src="images/canyu.gif" style="vertical-align: middle;margin-left: 5px"></form>  <a href="#" style="color:#0063B4"><img src="images/icon_3.gif"> 参与抽奖详细规则</a></div>
+              </li>
+              <li>
+                  <img src="images/line_1.gif">
+              </li>
+              <li style="background:url(images/list_3.gif) no-repeat top left;height:90px">
+                  <div style="padding-left: 50px;padding-top: 5px;float: left"><b style="font-size:16px;color:#B70207">循环消费</b> ---- 积分兑换金币比例为&nbsp;&nbsp;<font style="color:#0063B4">1:1</font>&nbsp;&nbsp;，您现在的积分为&nbsp;&nbsp;<font style="color:#B70207">{$info.integral}</font>&nbsp;&nbsp;可以兑换&nbsp;&nbsp;<font style="color:#B70207">{$info.integral}</font>&nbsp;&nbsp;金币</div>
+                  <div style="padding-left: 50px;padding-top: 15px;float:left">
+                  <form  name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()" style="background-color: #EFEDEE;border: 1px solid #CCCCCC;padding: 3px 5px;float:left;">
+                  <input type="text" id="" name="amount" value="{$order.amount|escape}"  style="border:none;background-color: #FFF;width:300px;padding-left: 5px;line-height:20px;height:20px;font-size: 16px;vertical-align:middle">
+                  
+                  <input type="hidden" name="surplus_type" value="1" />
+              	<input type="hidden" name="act" value="paidui" />
+              	<input type="submit" name="submit"  class="bnt_blue_4" value="" />
+              	
+                  </form>  <a href="#" style="color:#0063B4"><img src="images/icon_3.gif"> 循环消费规则介绍</a></div>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="blank"></div>
+  <div style="border:1px solid #CCC">
+      <ul>
+          <li style="background: url(images/yonghuzhonxin_cuxiao_bg.gif) repeat-x;height:34px;line-height:34px;padding-left: 20px;font-size:14px;vertical-align: middle;border-bottom: 1px solid #CCC"><b>促销活动</b></li>
+          <li style="text-align: center"><img src="images/yonhuzhonxin_ad_1.jpg" style="margin: 10px auto">&nbsp;&nbsp;<img src="images/yonhuzhonxin_ad_2.jpg" style="margin: 10px auto"></li>
+      </ul>
+  </div>
+  <!--====新界面结束======================================-->
+    <div class="box">
+     <div class="box_1">
+
+
+     
+      
+     </div>
+    </div>
+  </div>
+  <!--right end-->
+</div>
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

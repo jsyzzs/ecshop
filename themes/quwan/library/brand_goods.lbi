@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="ppbox">
+
+
+
+<div class="f_l" >  
+
+<div style="float:left">   
+<a href="{$goods_brand.url}" class="f6"> <img src="themes/quwan/images/{$goods_brand.name|escape:html}.jpg" /></a>
+
+</div>  
+</div>    
+        
+<div class="ppb">    
+<!--{foreach from=$brand_goods item=goods}-->
+<div class="goodsItem">
+    <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a>
+    <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+    <p class="price"> 
+        <font class="f1">本店价：</font>
+        <!--{if $goods.promote_price neq "" } -->
+        <font class="shop">{$goods.promote_price}</font> 
+        <!--{else}-->
+        <font class="shop">{$goods.shop_price}</font> 
+        <!--{/if}-->
+    </p>
+</div> 
+<!--{/foreach}-->
+</div>  
+
+</div>
+
+
+
+
+  

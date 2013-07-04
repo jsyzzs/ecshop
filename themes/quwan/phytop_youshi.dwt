@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+    <link href="phytop.css" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+    {* 包含脚本文件 *}
+    {insert_scripts files='common.js,index.js'}
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/left_goodslist.js"></script>
+    <script type="text/javascript">
+        function $id(element) {
+            return document.getElementById(element);
+        }
+        //切屏--是按钮，_v是内容平台，_h是内容库
+        function reg(str){
+            var bt=$id(str+"_b").getElementsByTagName("h2");
+            for(var i=0;i<bt.length;i++){
+                bt[i].subj=str;
+                bt[i].pai=i;
+                bt[i].style.cursor="pointer";
+                bt[i].onmousemove=function(){
+                    $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+                    for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+                        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+                        var ison=j==this.pai;
+                        _bt.className=(ison?"":"h2bg");
+                    }
+                }
+            }
+            $id(str+"_h").className="none";
+            $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+        }
+    </script>
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div id="phytop_box">
+    <div style="width:100%;background:url(images/phytop/phytop_head_bg.png);background-repeat: repeat-x">
+        <div style="width:960px;margin:0px auto"><img src="images/phytop/phytop_03.gif" /></div>
+    </div>
+	<div id="phytop_content">
+        <!--第一块区域开始-->
+        <div class="phytop_content_space" style="*height: 1%;background-color: #000;">
+            <ul class="content_listbox">
+                <li style="margin:0px auto;">
+                    <img src="images/phytop/content_5.gif" style="margin-top: 20px;" />
+                    <img src="images/phytop/content_6.gif" />
+                    <img src="images/phytop/content_7.gif" />
+                    <img src="images/phytop/content_8.gif" />
+                    <img src="images/phytop/content_9.gif" />
+                    <img src="images/phytop/content_10.gif" />
+                    <img src="images/phytop/content_11.gif" />
+                    <img src="images/phytop/content_12.gif" />
+                </li>
+            </ul>
+        </div>
+        <img src="images/phytop/phytop_16.gif" style="margin-top:-45px\" />
+    </div>
+    <span class="phytop_blank" style="height:10px"></span>
+    <!--专区页脚区域开始-->
+    <div style="width:100%;background:url(images/phytop/phytop_foot_bg.gif);background-repeat: repeat-x;height: 270px">
+        <div style="width:960px;margin:0px auto"><img src="images/phytop/phytop_42.gif" /></div>
+    </div>
+    <!--专区页脚区域结束-->
+</div>
+<span class="phytop_blank" style="height:20px"></span>
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/links.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

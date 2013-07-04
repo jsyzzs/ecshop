@@ -1,0 +1,63 @@
+<!--
+    删除页脚客户电话、IM联系方式显示代码，2011-11-24，Mr.HZ。
+-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript">
+    if (Object.prototype.toJSONString) {
+        var oldToJSONString = Object.toJSONString;
+        Object.prototype.toJSONString = function() {
+            if (arguments.length > 0) {
+                return false;
+            } else {
+                return oldToJSONString.apply(this, arguments);
+            }
+        }
+    }
+</script>
+<div class="blank"></div>
+     
+<div class="footer_box">
+    <!--底部导航 start ======================================-->
+    <!-- 合作银行显示 ===============================================-->
+  
+     <!-- {if $navigator_list.bottom} -->
+    <div class="blank"></div>
+    <div class="block">
+        <div class="bNavList">
+            <div style="float: left;width:800px;">
+
+                <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+                <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+                <!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+                <span style="color:#C54546"> |</span>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+
+            </div>
+            <div style="float: right;width: 80px;text-align: right;line-height: 0;font-size: 0px">
+                <a href="#top"><img src="../images/footer_top.gif"></a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <!-- {else} -->
+    <div style="background-color: #AE0001;height:5px;font-size: 0;margin: 2px auto;width: 1225px;"></div>
+    <!-- {/if} -->
+    <!--底部导航 end ===================================-->
+
+    <div class="blank"></div>
+    <!--版权 start ====================================-->
+    <div id="footer">
+        <div class="text">
+            {$copyright}　{$shop_address}　{$shop_postcode}
+            <!-- ICP 证书{if $icp_number} -->
+            {$lang.icp_number}：<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a>　
+            <!-- 结束ICP 证书{/if} -->
+        </div>
+         <script src="http://s95.cnzz.com/stat.php?id=5341938&web_id=5341938&show=pic2" language="JavaScript">
+    </div>
+   
+<div class="blank"></div>
+</div>

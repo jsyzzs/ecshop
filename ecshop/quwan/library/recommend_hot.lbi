@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<!-- Mr.HZ 2011-11-29 屏蔽无关JS脚本.
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/prototype.js" type=text/javascript></SCRIPT>
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/changimages.js" type=text/javascript></SCRIPT>
+-->
+<DIV class="recommendbox" align="center">
+  <div class="tit"> <img src="../images/remai.jpg">
+    <div class="f_r"> <a href="#" class="more" >更多</a> </DIV>
+  </DIV>
+  <DIV class="SwitchBigPic">
+      <!--{foreach from=$hot_goods item=goods name=no1}-->
+      <!-- {if $smarty.foreach.no1.iteration<9}-->
+      <dl class="recommend_goodsItem">
+        <dd class="recommend_goodsItem_image"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></dd>
+        <dd class="recommend_goodsItem_name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></dd>
+        <dd class="recommend_goodsItem_price">
+          <font style="font-weight:bold">
+            <!-- {if $goods.promote_price neq ""} -->
+            {$goods.promote_price}
+            <!-- {else}-->
+            {$goods.shop_price}
+            <!--{/if}-->
+          </font> 
+          <font class="recommend_goodsItem_integral">(赠{$goods.give_integral}积分)</font>
+        </dd>
+      </dl>
+      <!--{/if}-->
+      <!--{/foreach}-->
+   
+  </DIV>
+
+</DIV>
+<!--{/if}--> 

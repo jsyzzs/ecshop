@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+    <link href="phytop.css" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+    {* 包含脚本文件 *}
+    {insert_scripts files='common.js,index.js'}
+    <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/left_goodslist.js"></script>
+    <script type="text/javascript">
+        function $id(element) {
+            return document.getElementById(element);
+        }
+        //切屏--是按钮，_v是内容平台，_h是内容库
+        function reg(str){
+            var bt=$id(str+"_b").getElementsByTagName("h2");
+            for(var i=0;i<bt.length;i++){
+                bt[i].subj=str;
+                bt[i].pai=i;
+                bt[i].style.cursor="pointer";
+                bt[i].onmousemove=function(){
+                    $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+                    for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+                        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+                        var ison=j==this.pai;
+                        _bt.className=(ison?"":"h2bg");
+                    }
+                }
+            }
+            $id(str+"_h").className="none";
+            $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+        }
+    </script>
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div id="phytop_box">
+    <div style="width:100%;background:url(images/phytop/phytop_head_bg.gif);background-repeat: repeat-x">
+        <div style="width:960px;margin:0px auto"><img src="images/phytop/phytop_03.gif" /></div>
+    </div>
+	<div id="phytop_content">
+        <!--第一块区域开始-->
+        <div class="phytop_content_space" style="*height: 1%">
+            <ul class="content_listbox">
+                <li style="margin:0px auto;"><img src="images/phytop/content_01.gif" style="margin-top: 20px" /></li>
+                <li style="text-align: left">
+                    <p class="phytop_faq_title">1.	你们是什么样的定制护肤品呢？</p>
+                    <p class="phytop_text">答：我们是全球首创的个人专属护肤品专业定制服务平台，是根据您的皮肤状况与年龄、季节、地域、所处环境、生活习惯及相关信息，为您专属设计配方，再单独为您生产，定制适合您的专属护肤品。</p>
+                    <p class="phytop_faq_title">2.	是根据每个人的状况定制的吗？</p>
+                    <p class="phytop_text">答：是的。皮肤就像指纹，每个人都是独一无二的。每个人的皮肤状况与年龄、季节、地域、所处环境和所使用的护肤品等因素有密切关系，需要根据您的皮肤状况以及相关信息，为您定制生产适合您的专属护肤品。</p>
+                    <p class="phytop_faq_title">3.	能给我推荐几种护肤品吗？</p>
+                    <p class="phytop_text">答：我们是一个护肤品定制平台，是根据客人的皮肤特点和需求为其量肤定制，我们会为您设计配方并生产，希望帮每个客户找到适合他们的护肤品。为您个人定制的，才是最适合您的。</p>
+                    <p class="phytop_faq_title">4.	定制的产品在哪里生产的？</p>
+                    <p class="phytop_text">答：是在国内生产的。但是其生产基地是严格按照欧盟高端护肤品的生产灌装要求来建造的，是专门打造的无菌生产基地，已经达到了生产医药用品的GMP水平，甚至通过了国家1万级洁净区验证，也就是针剂无菌的程度。我们的工厂经欧盟专家的考证，已完全达到了欧盟对高端化妆品生产罐装的技术要求。所以完全无异于国外工厂的生产技术要求。</p>
+                    <p class="phytop_faq_title">5.	我比较相信知名品牌，好像没有听过你们的牌子？</p>
+                    <p class="phytop_text">答：我们是全球首创的个人专属护肤品专业定制服务平台，“菲朵芙妮”只是为您服务，定制专属产品的平台，并不是品牌，您才是产品的名字。这是您自己的品牌。</p>
+                    <p class="phytop_faq_title">6.	肌肤很敏感可以用你们的定制吗？</p>
+                    <p class="phytop_text">答：当然可以！我们是依据您的皮肤状态量身定制的护肤品，通过皮肤图谱分析及皮肤问卷信息采集，在设计您的产品配方时已充分考虑到您易敏感的皮肤特点，只要您依照我们为您设计的护肤规划建议去使用产品，是相对安全的。</p>
+                    <p class="phytop_faq_title">7.	定制的护肤品对我有效果吗？</p>
+                    <p class="phytop_text">答：在充分了解您的皮肤状况，并且依照为您量肤定制的健康护肤方案使用产品，使用适合您皮肤的护理品加上健康的养护方法，这样能让产品效用发挥到最佳，效果更符合您的需求。</p>
+                    <p class="phytop_faq_title">8.	你们的产品会不会有刺激性？</p>
+                    <p class="phytop_text">答：当然不会有，我们的宗旨是：适合、温和、新鲜，是根据您的皮肤生理状况等因素，专属为您研发和生产的护肤品。从原料入厂到最后生产完成到您手中，只需要7~10天的时间，非常新鲜。我们所有的产品，都不添加任何防腐剂，给予肌肤极致温和护理，安全，放心。</p>
+                    <p class="phytop_faq_title">9.	我的肌肤很好了还需要定制吗？</p>
+                    <p class="phytop_text">答：为您量身定制的产品能够让您的皮肤保持良好状态，抵御外界环境对皮肤的伤害。我们在护肤品中添加安全的抗氧化剂，增强皮肤的抗氧化能力，加强了产品保湿性和抗氧化作用。</p>
+                    <p class="phytop_faq_title">10.	我和朋友的皮肤差不多，可以将我定制的产品转给朋友使用吗？
+                    <p class="phytop_text">答：我们在为您设计产品配方时，充分考虑皮肤的水油状态、呈现肤色、纹理、毛孔状态、敏感度等，同时还综合考虑年龄、地域、生活习惯、工作环境等其他因素，配方的设计也许是完全不同的。所以为每个人设计出来的产品都是只适合自已使用的，不宜做通用产品使用。</p>
+                    <p class="phytop_faq_title">11.	使用定制的产品要多久皮肤会有改善呢？</p>
+                    <p class="phytop_text">答：皮肤问题产生是一个综合的因素造成的，比如使用不当的化妆品，睡眠时间不足，工作压力过大，防晒做得不到位等等，因此要解决这些问题。首先要恢复您皮肤的正常水油状态，恢复您皮肤角质层的屏障功能及锁水功能。定制的体验装产品主要作用在于将您皮肤的水油状态调整至趋于平衡，为您设计定制的第一套产品主要是帮助您的皮肤恢复到相对健康平衡的状态。欲速则不达，只有在此基础上再来改善或解决您的皮肤问题才是科学、健康、有效的。而且需要体验完后坚持定制正品使用才有改善。</p>
+                    <p class="phytop_faq_title">12.	用定制的产品时可以用其他品牌产品吗？</p>
+                    <p class="phytop_text">答：可以的，但建议您在体验期7—10天内最好不要同时使用其它品牌产品，这样您才能更好的了解到产品使用之后的感受。</p>
+                    <p class="phytop_faq_title">13.	你们的产品会不会有敏感的现象？</p>
+                    <p class="phytop_text">答：我们的原料是纯植物成分，无刺激，但如果您之前有在美容院做过换肤或用过药物激素类产品的，是很有可能会产生一些敏感现象的。您用前可以先在耳后等敏感部位测试一下，如果60分钟内没有红痒的现象就可以使用。</p>
+
+                </li>
+                <li style="margin:0px auto;"><img src="images/phytop/content_02.gif" style="margin-top: 50px" /></li>
+                <li style="text-align: left">
+                    <p class="phytop_faq_title">1.	洗面奶为什么没泡沫？是不是清洁力度不够？</p>
+                    <p class="phytop_text">答：泡沫的多少和清洁力度无关，我们这种是温和去污型的，温和无刺激。洗后皮肤柔滑不紧绷，并在表皮形成弱酸性保护膜，脸也肯定是清洗干净了的。</p>
+                    <p class="phytop_faq_title">2.	化妆水为什么有颜色，不应该是透明的吗？</p>
+                    <p class="phytop_text">答：我们的大部分产品都添加了蜂蜜发酵液，这是我们公司一项很重要的专利技术，在抗氧化方面有很好的效果。</p>
+                    <p class="phytop_faq_title">3.	补水和保湿有什么区别？</p>
+                    <p class="phytop_text">答：补水的话，主要是您皮肤的锁水能力不强，皮肤表面的水分容易流失，所以需要补水；保湿的话，是您的皮肤本身并不是很缺水，只是要把水分锁在脸上。</p>
+                    <p class="phytop_faq_title">4.	我为什么使用化妆水有刺痛感？</p>
+                    <p class="phytop_text">答：使用护肤品皮肤的刺痛感是因为角质层缺水引起的，正常角质层的含水量为15%-20%，当低于10%时用补水强的产品就会有刺痛感；这种情况建议您每次用两到三遍的化妆水再用其他产品，或隔一到两天用滋润霜打底敷膜10—15分钟，一般几天后刺痛感就会消失。</p>
+                    <p class="phytop_faq_title">5.	为什么爽肤水有黏黏的感觉？</p>
+                    <p class="phytop_text">答：有这种感觉是非常正常的现象。因为这与产品所添加的成份有关，如生化醣醛酸、海藻多醣体、多元醇保湿成份等，这些保湿成份使用时一般都会有黏黏的感觉。</p>
+                    <p class="phytop_faq_title">6.	为什么使用定制产品觉得不够保湿滋润？</p>
+                    <p class="phytop_text">答：因为您的肌肤缺水干燥，而我们的产品渗透性好，由内而外的调理，一般滋润的产品只是在皮肤表面滋润没有渗透，油份敷在外面所以感觉不干，而我们是产品开始使用时直接渗透到肌肤里，表面没有敷太多油的东西，所以觉得干，坚持使用一段时间就会好的， 这也是产品品质的区分之一。建议您可以清洁后爽肤水多拍几次再用其他产品，或强化肌肤水分定期敷膜。</p>
+                </li>
+                <li><img src="images/phytop/content_03.gif" style="margin-top: 50px" /></li>
+                <li style="text-align: left">
+                    <p class="phytop_faq_title">1.	美容护肤要注意什么?</p>
+                    <p class="phytop_text">答：（1）：适合自己的一套化妆品。不一定是很好的牌子但要适合自己，找出自己最初的问题，如是“美白”还是“收敛毛孔”，再对症下药。<br />
+                    　　（2）：注重健康的生活。有正常的作息时间，保持足够的睡眠。<br />
+                    　　（3）：坚持运动，这样才能面色红润。</p>
+                    <p class="phytop_faq_title">2.	红血丝问题严重怎么办？</p>
+                    <p class="phytop_text">答：可以做修复和预防，它会随着年龄的增长、外界环境的刺激加重扩张。所以要增强皮脂膜的健全，不能去角质，不要在阳光下暴晒，不能乱使用护肤品。</p>
+                    <p class="phytop_faq_title">3.	我黑头比较多，怎么办？</p>
+                    <p class="phytop_text">答：首先，我们要了解黑头形成的原因：<br />
+                    　　（1）油脂分泌过多与外界的灰尘的结合，没有得到及时的清洁或没有代谢出去形成黑头堵在毛孔里。<br />
+                    　　（2）晚睡觉，因为皮肤代谢和吸收最旺盛的时间是10点~凌晨2点，如果晚睡觉毛孔里的脏东西就会深沉的沉入毛孔，慢慢的形成草莓鼻。<br />
+                    　　（3）化妆品使用不当，如：含激素或药物的祛痘产品，会让毛孔越来越粗，过度挤压或者是过度清洁让水分流失，油脂代谢不出来形成黑头。<br />
+                    解决方法：1.清洁彻底，电脑辐射、环境污染、油烟、汽车尾气都属于油性污垢；<br />
+                    　　　　　2.补水，促进代谢；<br />
+                    　　　　　3.调理油脂分泌。</p>
+                    <p class="phytop_faq_title">4.	毛孔粗怎么办？</p>
+                    <p class="phytop_text">答：（1）：清洁很重要，让毛孔干净通透，但洗面奶一定要温和，太多泡泡或偏碱性的洗面奶会让肌肤水分流失；<br />
+                    　　（2）：洗面后一定要用化妆水（又称爽肤水），可以收敛毛孔；<br />
+                    　　（3）：注意少熬夜。</p>
+                </li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+        <img src="images/phytop/phytop_16.gif" style="margin-top:-45px\" />
+    </div>
+    <span class="phytop_blank" style="height:10px"></span>
+    <!--专区页脚区域开始-->
+    <div style="width:100%;background:url(images/phytop/phytop_foot_bg.gif);background-repeat: repeat-x;height: 270px">
+        <div style="width:960px;margin:0px auto"><img src="images/phytop/phytop_42.gif" /></div>
+    </div>
+    <!--专区页脚区域结束-->
+</div>
+<span class="phytop_blank" style="height:20px"></span>
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/links.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+body { font-size:12px; color: #545454; margin: 0px; padding: 0px; font-family:arial,simsun,Microsoft YaHei }
+ul,li { list-style-type: none; padding:0px;margin:0px;display:inline;}
+p{padding:0px;margin:0px}
+img{vertical-align:bottom;line-height: 0px;font-size: 0px}
+
+.phytop_blank{height:30px;display:inline-block;width:100%;visibility:hidden;font-size:0px;line-height: 0px}
+
+#phytop_box { width: 100%; background-image: url(images/phytop/box_bg.jpg); background-repeat: repeat-x; }
+
+#phytop_content { width: 960px; display:block; margin:0px auto; }
+
+.phytop_content_space{padding:0px 30px; background:url(images/phytop/space_bg.jpg) repeat-y;margin: 0px}
+.phytop_title{ font-size:16px; font-weight:bold; color:#7f1016;padding:15px 0px 3px 0px}
+.phytop_text{color:#545454;font-size:12px;*font-size:12px;line-height:22px;text-align: left}
+.phytop_faq_title{color:#7f1016;font-weight: bold;padding: 30px 0px 5px 0px;text-align: left}
+.content_listbox{background-color: #FFFAF4;text-align: center;margin-bottom:-50px;padding: 0px 10px;display:inline-block;top:-50px;position: relative;}

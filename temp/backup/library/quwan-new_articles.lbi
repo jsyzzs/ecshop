@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="cat_articles new_article">
+    <div style=" display: block; float:left; height:33px;line-height:0;font-size:0;">
+        <img src="../images/tit_gonggao.jpg">
+    </div>
+    <div class="boxCenterList newsBox ">
+        <div class="news_b">
+            <!--{foreach from=$new_articles item=article name=no}-->
+            <span style="width:209px;
+<!-- {if !$smarty.foreach.no.last} -->
+border-bottom:1px solid #eaeaea 
+<!-- {/if} -->   
+ " title="{$article.title|escape:html}">{$article.short_title}</span>
+            <!--{/foreach}-->
+        </div>
+    </div>
+</div>
+
+<div class="blank"></div>
+<a href="/goods-2802.html"><img src="../images/chanpintu_01.jpg" style="height: 244px;width:265px"></a>
+<div class="blank"></div>
+<a href="/goods-7.html"><img src="../images/chanpintu_03.jpg" style="height: 244px;width:265px"></a>

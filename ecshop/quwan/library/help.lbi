@@ -1,0 +1,27 @@
+<!--删除帮助文章分类名称文字显示代码：{$help_cat.cat_name}，行10 A 标内图片后。2011-11-24，Mr.HZ-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{if $helps}-->
+<div id="helpbox">
+        <div class="helpTitBg">
+            <!-- {foreach from=$helps item=help_cat name=no} -->
+            <dl>
+                <dt><a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}"><img style="vertical-align:middle"
+                                                                                   src="../images/help_cat_{$smarty.foreach.no.iteration}.gif"></a>
+                </dt>
+                <!-- {foreach from=$help_cat.article item=item} -->
+                <dd><img src="../images/help_listdisc.gif" style="vertical-align: bottom;margin-right: 5px"><a href="{$item.url}"
+                                                                          title="{$item.title|escape:html}">{$item.short_title}</a>
+                </dd>
+                <!-- {/foreach} -->
+            </dl>
+            <!-- {/foreach} -->
+        </div>
+        <div style="float:left;;width:10px"><img src="../images/help_line2.gif"></div>
+        <div style="float:right;;width:245px;padding-top:15px">
+            <span style="float: left"><img src="../images/help_tel.gif"></span>
+            <span style="padding:5px 0 0 15px;float: left"><a href="http://www.tianyoutian.cn" title="添又添官方网站"
+                                                               target="_blank">点击进入：www.tianyoutian.cn</a></span></div>
+    <div style="clear: both"></div>
+</div>
+
+<!--{/if}-->

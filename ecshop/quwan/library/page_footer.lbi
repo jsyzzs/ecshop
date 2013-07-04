@@ -1,0 +1,92 @@
+<!--
+    删除页脚客户电话、IM联系方式显示代码，2011-11-24，Mr.HZ。
+-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript">
+    if (Object.prototype.toJSONString) {
+        var oldToJSONString = Object.toJSONString;
+        Object.prototype.toJSONString = function() {
+            if (arguments.length > 0) {
+                return false;
+            } else {
+                return oldToJSONString.apply(this, arguments);
+            }
+        }
+    }
+</script>
+<div class="blank"></div>
+     
+<div class="footer_box">
+    <!--底部导航 start ======================================-->
+    <!-- 合作银行显示 ===============================================-->
+    <div id="box_bank">
+        <span class="caption">支持以下银行网上支付：</span>
+        <span class="icons">
+        <a href="http://www.bankofbeijing.com.cn/" target="_blank" title="北京银行"><img src="../images/bank/bank_icon_1.jpg" alt="北京银行"></a>
+        <a href="http://www.bjrcb.com/" target="_blank" title="北京农商银行"><img src="../images/bank/bank_icon_2.jpg" alt="北京农商银行"></a>
+        <a href="http://www.cbhb.com.cn/bhbank/S101/index.htm" target="_blank" title="渤海银行"><img src="../images/bank/bank_icon_3.jpg" alt="渤海银行"></a>
+        <a href="http://www.icbc.com.cn/icbc/" target="_blank" title="中国工商银行"><img src="../images/bank/bank_icon_4.jpg" alt="中国工商银行"></a>
+        <a href="http://www.cebbank.com/Site/ceb/cn" target="_blank" title="中国光大银行"><img src="../images/bank/bank_icon_5.jpg" alt="中国光大银行"></a>
+        <a href="http://www.cgbchina.com.cn/" target="_blank" title="广发银行"><img src="../images/bank/bank_icon_6.jpg" alt="广发银行"></a>
+        <a href="http://www.gzcb.com.cn/i_index.shtml" target="_blank" title="广州银行"><img src="../images/bank/bank_icon_7.jpg" alt="广州银行"></a>
+        <a href="http://www.961111.cn/" target="_blank" title="广州农商银行"><img src="../images/bank/bank_icon_8.jpg" alt="广州农商银行"></a>
+        <a href="http://www.hzbank.com.cn/" target="_blank" title="杭州银行"><img src="../images/bank/bank_icon_9.jpg" alt="杭州银行"></a>
+        <a href="http://www.hxb.com.cn/chinese/index.html" target="_blank" title="华夏银行"><img src="../images/bank/bank_icon_10.jpg" alt="华夏银行"></a>
+        <a href="http://www.ccb.com/cn/home/index.html" target="_blank" title="中国建设银行"><img src="../images/bank/bank_icon_11.jpg" alt="中国建设银行"></a>
+        <a href="http://www.bankcomm.com/BankCommSite/cn/index.html" target="_blank" title="交通银行"><img src="../images/bank/bank_icon_12.jpg" alt="交通银行"></a>
+        <a href="http://www.cmbc.com.cn/" target="_blank" title="中国民生银行"><img src="../images/bank/bank_icon_13.jpg" alt="中国民生银行"></a>
+        <a href="http://www.njcb.com.cn/" target="_blank" title="南京银行"><img src="../images/bank/bank_icon_14.jpg" alt="南京银行"></a>
+        <a href="http://www.abchina.com/cn/" target="_blank" title="中国农业银行"><img src="../images/bank/bank_icon_15.jpg" alt="中国农业银行"></a>
+        <a href="http://bank.pingan.com/index.shtml" target="_blank" title="平安银行"><img src="../images/bank/bank_icon_16.jpg" alt="平安银行"></a>
+        <a href="http://ebank.spdb.com.cn/" target="_blank" title="浦发银行"><img src="../images/bank/bank_icon_17.jpg" alt="浦发银行"></a>
+        <a href="http://www.srcb.com/html/" target="_blank" title="上海农商银行"><img src="../images/bank/bank_icon_18.jpg" alt="上海农商银行"></a>
+
+        <a href="http://www.sdb.com.cn/" target="_blank" title="深圳发展银行"><img src="../images/bank/bank_icon_19.jpg" alt="深圳发展银行"></a>
+            
+        <a href="http://www.cib.com.cn" target="_blank" title="兴业银行"><img src="../images/bank/bank_icon_20.jpg" alt="兴业银行"></a>
+        <a href="http://www.psbc.com/portal/zh_CN/index.html" target="_blank" title="中国邮政储蓄银行"><img src="../images/bank/bank_icon_21.jpg" alt="中国邮政储蓄银行"></a>
+        <a href="http://www.cmbchina.com/" target="_blank" title="招商银行"><img src="../images/bank/bank_icon_22.jpg" alt="招商银行"></a>
+        <a href="http://www.boc.cn/" target="_blank" title="中国银行"><img src="../images/bank/bank_icon_23.jpg" alt="中国银行"></a>
+        <a href="http://bank.ecitic.com/" target="_blank" title="中兴银行"><img src="../images/bank/bank_icon_24.jpg" alt="中兴银行"></a>
+    </span>
+        <div style="clear: both"></div>
+    </div>
+     <!-- {if $navigator_list.bottom} -->
+    <div class="blank"></div>
+    <div class="block">
+        <div class="bNavList">
+            <div style="float: left;width:800px;">
+
+                <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+                <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+                <!-- {if !$smarty.foreach.nav_bottom_list.last} -->
+                <span style="color:#C54546"> |</span>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+
+            </div>
+            <div style="float: right;width: 80px;text-align: right;line-height: 0;font-size: 0px">
+                <a href="#top"><img src="../images/footer_top.gif"></a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <!-- {else} -->
+    <div style="background-color: #AE0001;height:5px;font-size: 0;margin: 2px auto;width: 960px;"></div>
+    <!-- {/if} -->
+    <!--底部导航 end ===================================-->
+
+    <div class="blank"></div>
+    <!--版权 start ====================================-->
+    <div id="footer">
+        <div class="text">
+            {$copyright}　{$shop_address}　{$shop_postcode}
+            <!-- ICP 证书{if $icp_number} -->
+            {$lang.icp_number}：<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a>　
+            <!-- 结束ICP 证书{/if} -->
+        </div>
+    </div>
+<div class="blank"></div>
+</div>
